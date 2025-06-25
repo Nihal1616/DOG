@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  background-color: #f5ebe0 !important;
+  background-size: cover;
+  padding: 20px;
+  text-align: center;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+form {
+  margin-bottom: 20px;
+}
+select, button, .btn-refresh {
+  padding: 8px 12px;
+  margin: 0 5px;
+}
+
+.form-select{
+    width: 300px !important;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+.gallery img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+

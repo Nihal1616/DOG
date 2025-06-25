@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dog Gallery</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Dog Gallery</h1>
+    <form method="get" action="/">
+      <label for="breed">Filter by Breed <i class="fa-solid fa-dog"></i></i></label>
+      <select class="form-select mb-3" name="breed " aria-label="Default select example" id="breed">
+        <option selected>-- Random --</option>
+        <% breeds.forEach(b => { %>
+          <option value="<%= b %>" <%= selectedBreed === b ? 'selected' : '' %>><%= b %></option>
+        <% }) %>
+      </select>
+      <button class="btn btn-primary" data-bs-toggle="collapse" type="submit">Search</button>
+      <a href="/" class="btn-refresh btn btn-primary ">Refresh</a>
+    </form>
+    <div class="gallery ">
+      <% images.forEach(img => { %>
+        <div class="card" >
+        <img src="<%= img %>" class="card-img-top"  alt="dog" />
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</body>
+</html>
