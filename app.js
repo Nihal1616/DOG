@@ -17,7 +17,7 @@ async function getBreeds() {
   return Object.keys(res.data.message);
 }
 
-async function getDogsByBreed(breed, count = 5) {
+async function getDogsByBreed(breed, count = 25) {
   const res = await axios.get(`${DOG_API}/breed/${breed}/images/random/${count}`);
   return res.data.message;
 }
