@@ -8,23 +8,35 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Dog Gallery</h1>
-    <form method="get" action="/">
-      <label for="breed">Filter by Breed <i class="fa-solid fa-dog"></i></i></label>
-      <select class="form-select mb-3" name="breed " aria-label="Default select example" id="breed">
-        <option selected>-- Random --</option>
-        <% breeds.forEach(b => { %>
-          <option value="<%= b %>" <%= selectedBreed === b ? 'selected' : '' %>><%= b %></option>
-        <% }) %>
-      </select>
-      <button class="btn btn-primary" data-bs-toggle="collapse" type="submit">Search</button>
-      <a href="/" class="btn-refresh btn btn-primary ">Refresh</a>
+    <div class="container">
+    <h1>🐶 Dog Gallery</h1>
+
+    <form method="get" action="/" class="mb-4">
+      <label for="breed" class="form-label">
+        Filter by Breed <i class="fa-solid fa-dog"></i>
+      </label>
+      <div class="row g-2 align-items-end">
+        <div class="col-md-6">
+          <select class="form-select" name="breed" id="breed">
+            <option value="">-- Random --</option>
+            <% breeds.forEach(b => { %>
+              <option value="<%= b %>" <%= selectedBreed === b ? 'selected' : '' %>><%= b %></option>
+            <% }) %>
+          </select>
+        </div>
+        <div class="col-md-auto">
+          <button class="btn btn-primary" type="submit">Search</button>
+          <a href="/" class="btn btn-secondary btn-refresh">Refresh</a>
+        </div>
+      </div>
     </form>
-    <div class="gallery ">
+
+    <div class="row gallery">
       <% images.forEach(img => { %>
-        <div class="card" >
-        <img src="<%= img %>" class="card-img-top"  alt="dog" />
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2">
+          <div class="card">
+            <img src="<%= img %>" class="card-img-top" alt="dog" />
+          </div>
         </div>
       <% }) %>
     </div>
