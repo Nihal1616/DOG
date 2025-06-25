@@ -7,7 +7,7 @@ app.use(express.static("public"));
 
 const DOG_API = "https://dog.ceo/api";
 
-async function getRandomDogs(count = 5) {
+async function getRandomDogs(count = 25) {
   const res = await axios.get(`${DOG_API}/breeds/image/random/${count}`);
   return res.data.message;
 }
